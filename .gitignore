@@ -8,6 +8,7 @@
 # dependencies
 /node_modules
 /.yarn
+/.yarnrc.yml
 
 # IDEs and editors
 /.idea
