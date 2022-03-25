@@ -7,7 +7,7 @@ on:
     branches:
       - main
 
-cuncurrency:
+concurrency:
   group: ci-tests-${{ github.ref }}
   cancel-in-progress: true
 
