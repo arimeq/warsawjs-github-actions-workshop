@@ -13,6 +13,9 @@ concurrency:
 
 jobs:
   build-and-cache:
+    permissions:
+      id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
+      contents: read
     # define type of machine your action will run on
     runs-on: ubuntu-latest
     # tell the machine what to do – steps
