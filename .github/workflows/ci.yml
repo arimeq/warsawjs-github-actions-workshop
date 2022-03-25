@@ -1,27 +1,41 @@
+# name of the workflow
 name: CI
 
+# event trigger
 on:
   pull_request:
     branches:
       - main
 
 jobs:
+  # name of the job
   build-test:
+    # define type of machine your action will run on
     runs-on: ubuntu-latest
-
+    # tell the machine what to do – steps
     steps:
+      # give the step a name
       - name: Checkout
+        # action to use for this step
         uses: actions/checkout@v2
+        # parameters used for the action based on the documentation
         with:
           fetch-depth: 0
 
       - name: Setup Nodejs
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
 
-      - name: Install deps
+      - name: Install dependencies
         run: yarn install
 
       - name: Run tests
         run: yarn test:ci
+
+      - name: Lint CI
+        run: yarn lint:ci
+
+      - name: Run e2e tests
+        run: yarn e2e
+      
