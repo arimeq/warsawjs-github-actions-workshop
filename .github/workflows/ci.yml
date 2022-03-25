@@ -44,6 +44,16 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != true
         run: yarn install
 
+      - name: Build Site
+        run: yarn build --prod
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "warsawjs-workshop-2"
+          entrypoint: https://deno.land/std/http/file_server.ts
+          root: dist/apps/unicorn-hunt
+
   # name of the job
   test:
     needs: build-and-cache
