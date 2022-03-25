@@ -61,12 +61,12 @@ jobs:
           cache: 'yarn'
 
       - name: Cache node modules and artifacts
-          uses: actions/cache@v2
-          id: yarn-cache
-          with:
-            path: |
-              **/node_modules
-            key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install
         if: steps.yarn-cache.outputs.cache-hit != true
@@ -96,12 +96,12 @@ jobs:
           cache: 'yarn'
 
       - name: Cache node modules and artifacts
-          uses: actions/cache@v2
-          id: yarn-cache
-          with:
-            path: |
-              **/node_modules
-            key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install
         if: steps.yarn-cache.outputs.cache-hit != true
@@ -131,12 +131,12 @@ jobs:
           cache: 'yarn'
 
       - name: Cache node modules and artifacts
-          uses: actions/cache@v2
-          id: yarn-cache
-          with:
-            path: |
-              **/node_modules
-            key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: yarn-cache-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install
         if: steps.yarn-cache.outputs.cache-hit != true
